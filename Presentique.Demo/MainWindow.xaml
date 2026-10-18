@@ -1,0 +1,36 @@
+﻿<Window
+    x:Class="Presentique.Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Presentique.Controls;assembly=Presentique"
+    UseLayoutRounding="True"
+    ThemeMode="Dark"
+    Title="Demo"
+    Width="1200"
+    Height="900">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+
+            <controls:NavigationButton
+                Text="Home"/>
+            
+            <controls:NavigationButton
+                Text="Media"/>
+            
+            <controls:NavigationButton
+                Text="Settings"/>
+
+        </StackPanel>
+        
+    </Grid>
+    
+</Window>
