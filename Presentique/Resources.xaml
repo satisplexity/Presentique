@@ -5,7 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
 
         <ResourceDictionary
-            Source="/Presentique;component/Styles/NavigationButton.xaml"/>
+            Source="/Presentique;component/Styles/HorizontalSlider.xaml"/>
 
     </ResourceDictionary.MergedDictionaries>
     

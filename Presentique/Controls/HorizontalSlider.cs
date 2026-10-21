@@ -17,6 +17,18 @@ public class HorizontalSlider : Slider
         set => SetValue(TitleProperty, value);
     }
 
+    public static readonly DependencyProperty RoundingProperty
+        = DependencyProperty.Register(
+            nameof(Rounding),
+            typeof(CornerRadius),
+            typeof(HorizontalSlider));
+
+    public CornerRadius Rounding
+    {
+        get => (CornerRadius)GetValue(RoundingProperty);
+        set => SetValue(RoundingProperty, value);
+    }
+
     public static readonly DependencyProperty ValueSuffixProperty
         = DependencyProperty.Register(
             nameof(ValueSuffix),
@@ -41,7 +53,7 @@ public class HorizontalSlider : Slider
         set => SetValue(ValuePrefixProperty, value);
     }
 
-    private TextBlock _valueText;
+    private TextBlock? _valueText;
 
     public override void OnApplyTemplate()
     {

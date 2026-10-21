@@ -13,9 +13,6 @@
 
                 <ResourceDictionary
                     Source="/Presentique;component/Resources.xaml"/>
-                
-                <ResourceDictionary
-                    Source="/Presentique;component/Styles/Slider.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
             
