@@ -30,6 +30,16 @@
                 Text="Settings"/>
 
         </StackPanel>
+
+        <StackPanel
+            Grid.Column="1">
+
+            <controls:HorizontalSlider
+                Title="Slider"
+                ValueSuffix="$"
+                ValuePrefix="Money"/>
+
+        </StackPanel>
         
     </Grid>
     
