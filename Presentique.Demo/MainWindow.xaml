@@ -18,19 +18,6 @@
 
         </Grid.ColumnDefinitions>
 
-        <StackPanel>
-
-            <controls:NavigationButton
-                Text="Home"/>
-            
-            <controls:NavigationButton
-                Text="Media"/>
-            
-            <controls:NavigationButton
-                Text="Settings"/>
-
-        </StackPanel>
-
         <StackPanel
             Grid.Column="1">
 

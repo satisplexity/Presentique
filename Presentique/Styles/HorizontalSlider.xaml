@@ -23,16 +23,8 @@
                 <ControlTemplate
                     TargetType="{x:Type RepeatButton}">
 
-                    <Grid
-                        Background="Transparent">
-
-                        <Border
-                            Height="4"
-                            VerticalAlignment="Center"
-                            Background="{TemplateBinding Background}"
-                            CornerRadius="2"/>
-
-                    </Grid>
+                    <Border
+                        Background="{TemplateBinding Background}"/>
 
                 </ControlTemplate>
 
@@ -49,11 +41,14 @@
 
         <Setter
             Property="Background"
-            Value="#DDD4EE"/>
+            Value="#555"/>
+
+        <Setter Property="Foreground"
+                Value="#999"/>
 
         <Setter
             Property="Width"
-            Value="16"/>
+            Value="32"/>
 
         <Setter
             Property="Template">
@@ -63,15 +58,18 @@
                 <ControlTemplate
                     TargetType="{x:Type Thumb}">
 
-                    <Grid
-                        Background="Transparent">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="0, 10, 10, 0"
+                        Padding="6">
 
                         <Border
-                            x:Name="ThumbShape"
-                            Background="{TemplateBinding Background}"
-                            CornerRadius="0, 10, 10, 0"/>
+                            Background="{TemplateBinding Foreground}"
+                            CornerRadius="4"
+                            Width="8"
+                            HorizontalAlignment="Right"/>
 
-                    </Grid>
+                    </Border>
 
                     <ControlTemplate.Triggers>
 
@@ -79,22 +77,80 @@
                             Property="IsMouseOver"
                             Value="True">
 
-                            <Setter
-                                TargetName="ThumbShape"
-                                Property="Background"
-                                Value="#FFFFFF"/>
+                            <Trigger.EnterActions>
 
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="#B58AE8"
+                                            Duration="0:0:0.15"/>
+
+                                    </Storyboard>
+                                    
+                                </BeginStoryboard>
+                                
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="#999"
+                                            Duration="0:0:0.1"/>
+
+                                    </Storyboard>
+                                    
+                                </BeginStoryboard>
+                                
+                            </Trigger.ExitActions>
+                            
                         </Trigger>
 
                         <Trigger
                             Property="IsDragging"
                             Value="True">
 
-                            <Setter
-                                TargetName="ThumbShape"
-                                Property="Background"
-                                Value="#B58AE8"/>
+                            <Trigger.EnterActions>
 
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="#B58AE8"
+                                            Duration="0:0:0.15"/>
+
+                                    </Storyboard>
+                                    
+                                </BeginStoryboard>
+                                
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="#555"
+                                            Duration="0:0:.1"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </Trigger.ExitActions>
+                            
                         </Trigger>
 
                     </ControlTemplate.Triggers>
@@ -115,12 +171,51 @@
             Value="10"/>
 
         <Setter
+            Property="Padding"
+            Value="10"/>
+
+        <Setter
             Property="Background"
             Value="#222"/>
 
         <Setter
             Property="Foreground"
-            Value="#888"/>
+            Value="#CCE"/>
+
+        <Setter
+            Property="BorderThickness"
+            Value="1"/>
+
+        <Setter
+            Property="FontSize"
+            Value="15"/>
+
+        <Setter
+            Property="FontWeight"
+            Value="DemiBold"/>
+
+        <Setter
+            Property="BorderBrush">
+
+            <Setter.Value>
+
+                <LinearGradientBrush
+                    StartPoint="0.5, 0"
+                    EndPoint="0.5, 1">
+
+                    <GradientStop
+                        Color="#333"
+                        Offset="0"/>
+
+                    <GradientStop
+                        Color="#111"
+                        Offset="1"/>
+
+                </LinearGradientBrush>
+
+            </Setter.Value>
+            
+        </Setter>
 
         <Setter
             Property="IsMoveToPointEnabled"
@@ -142,39 +237,43 @@
 
                         <Grid>
 
-                            <Grid.ColumnDefinitions>
-
-                                <ColumnDefinition
-                                    Width="Auto"/>
-                                
-                                <ColumnDefinition/>
-                                
-                                <ColumnDefinition
-                                    Width="Auto"/>
-
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock
-                                Text="{TemplateBinding Title}"
-                                Foreground="#444"
-                                Margin="10"/>
-
                             <Track
                                 x:Name="PART_Track"
-                                Grid.Column="1">
+                                Grid.Column="1"
+                                Orientation="Horizontal">
 
                                 <Track.DecreaseRepeatButton>
 
                                     <RepeatButton
                                         Command="{x:Static Slider.DecreaseLarge}"
-                                        Background="{TemplateBinding Foreground}"
-                                        Style="{StaticResource SliderTrackButtonStyle}"/>
+                                        Style="{StaticResource SliderTrackButtonStyle}">
+
+                                        <RepeatButton.Background>
+
+                                            <LinearGradientBrush
+                                                StartPoint="0, 0.5"
+                                                EndPoint="1, 0.5">
+
+                                                <GradientStop
+                                                    Color="#666"
+                                                    Offset="0"/>
+
+                                                <GradientStop
+                                                    Color="{Binding Background.Color, Source={x:Reference PART_Thumb}}"
+                                                    Offset="1"/>
+
+                                            </LinearGradientBrush>
+                                            
+                                        </RepeatButton.Background>
+
+                                    </RepeatButton>
 
                                 </Track.DecreaseRepeatButton>
 
                                 <Track.Thumb>
 
                                     <Thumb
+                                        x:Name="PART_Thumb"
                                         Style="{StaticResource SliderThumbStyle}"/>
 
                                 </Track.Thumb>
@@ -189,7 +288,30 @@
                                 </Track.IncreaseRepeatButton>
 
                             </Track>
-                            
+
+                            <TextBlock
+                                Text="{TemplateBinding Title}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Margin="{TemplateBinding Padding}"
+                                FontSize="{TemplateBinding FontSize}"
+                                FontWeight="{TemplateBinding FontWeight}"
+                                FontFamily="{TemplateBinding FontFamily}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                IsHitTestVisible="False"/>
+
+                            <TextBlock
+                                Grid.Column="2"
+                                x:Name="PART_ValueText"
+                                FontWeight="{TemplateBinding FontWeight}"
+                                FontFamily="{TemplateBinding FontFamily}"
+                                FontSize="{TemplateBinding FontSize}"
+                                Margin="{TemplateBinding Padding}"
+                                Foreground="{TemplateBinding Foreground}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                IsHitTestVisible="False"/>
+
                         </Grid>
                         
                     </Border>
