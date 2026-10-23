@@ -10,10 +10,60 @@ namespace Presentique.Windows;
 public class ThemedWindow : Window
 {
     /// <summary>
+    /// Identifies the <see cref="CornerRounding"/> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty CornerRoundingProperty
+        = DependencyProperty.Register(
+            nameof(CornerRounding),
+            typeof(CornerRadius),
+            typeof(ThemedWindow),
+            new PropertyMetadata(16));
+
+    /// <summary>
+    /// Gets or sets the corner radius of the window.
+    /// </summary>
+    /// <value>
+    /// The height of the title bar, in device-independent units.
+    /// <para>
+    /// The default value is 16.
+    /// </para>
+    /// </value>
+    public CornerRadius CornerRounding
+    {
+        get => (CornerRadius)GetValue(CornerRoundingProperty);
+        set => SetValue(CornerRoundingProperty, value);
+    }
+
+    /// <summary>
+    /// Identifies the <see cref="TitleBarHeight"/> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty TitleBarHeightProperty
+        = DependencyProperty.Register(
+            nameof(TitleBarHeight),
+            typeof(double),
+            typeof(ThemedWindow),
+            new PropertyMetadata(48));
+
+    /// <summary>
+    /// Gets or sets the height of the window's title bar.
+    /// </summary>
+    /// <value>
+    /// The height of the title bar, in device-independent units.
+    /// <para>
+    /// The default value is 48.
+    /// </para>
+    /// </value>
+    public double TitleBarHeight
+    {
+        get => (double)GetValue(TitleBarHeightProperty);
+        set => SetValue(TitleBarHeightProperty, value);
+    }
+
+    /// <summary>
     /// Represents the command used to minimize the window.
     /// </summary>
-    public static readonly RoutedUICommand MinimizeCommand =
-        new("Minimize",
+    public static readonly RoutedUICommand MinimizeCommand
+        = new("Minimize",
             nameof(MinimizeCommand),
             typeof(ThemedWindow));
 
