@@ -33,7 +33,7 @@
             <Setter.Value>
 
                 <shell:WindowChrome
-                    CaptionHeight="44"
+                    CaptionHeight="48"
                     ResizeBorderThickness="8"
                     GlassFrameThickness="0"
                     UseAeroCaptionButtons="False"/>
@@ -53,20 +53,24 @@
                     <Border
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRounding}">
 
                         <Grid>
 
                             <Grid.RowDefinitions>
 
-                                <RowDefinition/>
+                                <RowDefinition
+                                    Height="{TemplateBinding TitleBarHeight}"/>
 
                                 <RowDefinition/>
 
                             </Grid.RowDefinitions>
 
                             <!-- Title bar -->
-                            <Grid>
+                            <Grid
+                                Background="#333">
+
 
                             </Grid>
 

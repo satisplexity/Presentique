@@ -17,7 +17,7 @@ public class ThemedWindow : Window
             nameof(CornerRounding),
             typeof(CornerRadius),
             typeof(ThemedWindow),
-            new PropertyMetadata(16));
+            new PropertyMetadata(new CornerRadius(16)));
 
     /// <summary>
     /// Gets or sets the corner radius of the window.
@@ -40,9 +40,9 @@ public class ThemedWindow : Window
     public static readonly DependencyProperty TitleBarHeightProperty
         = DependencyProperty.Register(
             nameof(TitleBarHeight),
-            typeof(double),
+            typeof(GridLength),
             typeof(ThemedWindow),
-            new PropertyMetadata(48));
+            new PropertyMetadata(new GridLength(48)));
 
     /// <summary>
     /// Gets or sets the height of the window's title bar.
@@ -53,9 +53,9 @@ public class ThemedWindow : Window
     /// The default value is 48.
     /// </para>
     /// </value>
-    public double TitleBarHeight
+    public GridLength TitleBarHeight
     {
-        get => (double)GetValue(TitleBarHeightProperty);
+        get => (GridLength)GetValue(TitleBarHeightProperty);
         set => SetValue(TitleBarHeightProperty, value);
     }
 
