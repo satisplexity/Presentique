@@ -28,21 +28,6 @@
             Value="2"/>
 
         <Setter
-            Property="shell:WindowChrome.WindowChrome">
-
-            <Setter.Value>
-
-                <shell:WindowChrome
-                    CaptionHeight="48"
-                    ResizeBorderThickness="8"
-                    GlassFrameThickness="0"
-                    UseAeroCaptionButtons="False"/>
-
-            </Setter.Value>
-
-        </Setter>
-
-        <Setter
             Property="Template">
 
             <Setter.Value>
@@ -61,7 +46,7 @@
                             <Grid.RowDefinitions>
 
                                 <RowDefinition
-                                    Height="{TemplateBinding TitleBarHeight}"/>
+                                    Height="Auto"/>
 
                                 <RowDefinition/>
 
@@ -69,12 +54,16 @@
 
                             <!-- Title bar -->
                             <Grid
-                                Background="#333">
+                                Height="{TemplateBinding TitleBarHeight}"
+                                Background="#333"
+                                Margin="0, 0, 0, 5">
 
 
                             </Grid>
 
+                            <!-- Application content -->
                             <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
                                 Grid.Row="1"
                                 ContentSource="Content"/>
 

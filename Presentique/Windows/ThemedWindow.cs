@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System.Windows.Shell;
+using System.Windows.Input;
+using System.Windows.Data;
 using System.Windows;
 
 namespace Presentique.Windows;
@@ -40,9 +42,9 @@ public class ThemedWindow : Window
     public static readonly DependencyProperty TitleBarHeightProperty
         = DependencyProperty.Register(
             nameof(TitleBarHeight),
-            typeof(GridLength),
+            typeof(double),
             typeof(ThemedWindow),
-            new PropertyMetadata(new GridLength(48)));
+            new PropertyMetadata(48.0));
 
     /// <summary>
     /// Gets or sets the height of the window's title bar.
@@ -53,9 +55,9 @@ public class ThemedWindow : Window
     /// The default value is 48.
     /// </para>
     /// </value>
-    public GridLength TitleBarHeight
+    public double TitleBarHeight
     {
-        get => (GridLength)GetValue(TitleBarHeightProperty);
+        get => (double)GetValue(TitleBarHeightProperty);
         set => SetValue(TitleBarHeightProperty, value);
     }
 
@@ -100,11 +102,23 @@ public class ThemedWindow : Window
     /// </summary>
     public ThemedWindow()
     {
+        BindMinimize();
+        BindMaximize();
+        BindClose();
+
+        InitializeChrome();
+    }
+
+    private void BindMinimize()
+    {
         CommandBindings.Add(
             new CommandBinding(
                 MinimizeCommand,
                 (_, _) => SystemCommands.MinimizeWindow(this)));
+    }
 
+    private void BindMaximize()
+    {
         CommandBindings.Add(
             new CommandBinding(
                 ToggleMaximizeCommand,
@@ -126,10 +140,46 @@ public class ThemedWindow : Window
                         ResizeMode.CanResizeWithGrip;
                     e.Handled = true;
                 }));
+    }
 
+    private void BindClose()
+    {
         CommandBindings.Add(
             new CommandBinding(
                 CloseCommand,
                 (_, _) => SystemCommands.CloseWindow(this)));
+    }
+
+    private void InitializeChrome()
+    {
+        CommandBindings.Add(
+            new CommandBinding(
+                CloseCommand,
+                (_, _) => SystemCommands.CloseWindow(this)));
+
+        var chrome = new WindowChrome()
+        {
+            ResizeBorderThickness = new(8),
+            UseAeroCaptionButtons = false,
+            GlassFrameThickness = new(0)
+        };
+
+        BindingOperations.SetBinding(
+            chrome,
+            WindowChrome.CaptionHeightProperty,
+            new Binding(nameof(TitleBarHeight))
+            {
+                Source = this
+            });
+
+        BindingOperations.SetBinding(
+            chrome,
+            WindowChrome.CornerRadiusProperty,
+            new Binding(nameof(CornerRounding))
+            {
+                Source = this
+            });
+
+        WindowChrome.SetWindowChrome(this, chrome);
     }
 }
