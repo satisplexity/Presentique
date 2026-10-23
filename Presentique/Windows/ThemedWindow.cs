@@ -152,11 +152,6 @@ public class ThemedWindow : Window
 
     private void InitializeChrome()
     {
-        CommandBindings.Add(
-            new CommandBinding(
-                CloseCommand,
-                (_, _) => SystemCommands.CloseWindow(this)));
-
         var chrome = new WindowChrome()
         {
             ResizeBorderThickness = new(8),
