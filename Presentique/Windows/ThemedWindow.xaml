@@ -21,6 +21,22 @@
             Value="#181819"/>
 
         <Setter
+            Property="Title"
+            Value="Themed window"/>
+
+        <Setter
+            Property="Foreground"
+            Value="#88E"/>
+
+        <Setter
+            Property="FontSize"
+            Value="20"/>
+
+        <Setter
+            Property="FontWeight"
+            Value="Bold"/>
+
+        <Setter
             Property="BorderBrush">
 
             <Setter.Value>
@@ -30,11 +46,11 @@
                     EndPoint="0.5, 1">
 
                     <GradientStop
-                        Color="#262628"
+                        Color="#303030"
                         Offset="0"/>
 
                     <GradientStop
-                        Color="#19191A"
+                        Color="#282828"
                         Offset="1"/>
 
                 </LinearGradientBrush>
@@ -88,6 +104,20 @@
                                 Background="#242426"
                                 Margin="0, 0, 0, 5">
 
+                                <TextBlock
+                                    Text="{TemplateBinding Title}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    FontWeight="{TemplateBinding FontWeight}"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    Margin="10, 0, 0, 0"/>
+
+                                <StackPanel>
+                                    
+                                </StackPanel>
+                                
                             </Grid>
 
                             <!-- Application content -->
