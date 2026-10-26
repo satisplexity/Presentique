@@ -113,7 +113,12 @@
                                         Width="Auto"/>
 
                                 </Grid.ColumnDefinitions>
-                                
+
+                                <Image
+                                    Source="{TemplateBinding Icon}"
+                                    Stretch="Fill"
+                                    Margin="16, 0, 0, 0"/>
+
                                 <TextBlock
                                     Grid.Column="1"
                                     Text="{TemplateBinding Title}"
@@ -123,7 +128,7 @@
                                     FontWeight="{TemplateBinding FontWeight}"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Left"
-                                    Margin="16, 0, 0, 0"/>
+                                    Margin="0, 0, 0, 0"/>
 
                                 <ContentPresenter
                                     Grid.Column="2"
