@@ -66,12 +66,42 @@
 
                         <Grid>
 
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition
+                                    Width="*"/>
+                                
+                                <ColumnDefinition
+                                    Width="2*"/>
+                                
+                                <ColumnDefinition
+                                    Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition
+                                    Height="*"/>
+                                
+                                <RowDefinition
+                                    Height="2*"/>
+                                
+                                <RowDefinition
+                                    Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            
                             <Path
+                                Grid.Column="1"
+                                Grid.Row="1"
                                 Data="{TemplateBinding Icon}"
                                 Fill="#333"
                                 Stretch="Uniform"/>
 
                             <Path
+                                Grid.Column="1"
+                                Grid.Row="1"
                                 x:Name="PART_HighlightingIcon"
                                 Data="{TemplateBinding Icon}"
                                 Fill="{TemplateBinding Foreground}"
