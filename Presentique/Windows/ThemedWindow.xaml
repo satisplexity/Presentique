@@ -6,13 +6,6 @@
     xmlns:helpers="clr-namespace:Presentique.Helpers"
     xmlns:buttons="clr-namespace:Presentique.Buttons">
 
-    <ResourceDictionary.MergedDictionaries>
-
-        <ResourceDictionary
-            Source="/Presentique;component/Buttons/Styles/RoundButton.xaml"/>
-
-    </ResourceDictionary.MergedDictionaries>
-
     <Style
         TargetType="{x:Type windows:ThemedWindow}">
 
@@ -123,7 +116,8 @@
 
                                     <buttons:RoundButton
                                         WindowChrome.IsHitTestVisibleInChrome="True"
-                                        Command="{x:Static windows:ThemedWindow.MinimizeCommand}">
+                                        Command="{x:Static windows:ThemedWindow.MinimizeCommand}"
+                                        Foreground="#777">
 
                                         <buttons:RoundButton.Icon>
 
@@ -135,7 +129,8 @@
 
                                     <buttons:RoundButton
                                         WindowChrome.IsHitTestVisibleInChrome="True"
-                                        Command="{x:Static windows:ThemedWindow.ToggleMaximizeCommand}">
+                                        Command="{x:Static windows:ThemedWindow.ToggleMaximizeCommand}"
+                                        Foreground="#777">
 
                                         <buttons:RoundButton.Icon>
 
@@ -147,7 +142,8 @@
 
                                     <buttons:RoundButton
                                         WindowChrome.IsHitTestVisibleInChrome="True"
-                                        Command="{x:Static windows:ThemedWindow.CloseCommand}">
+                                        Command="{x:Static windows:ThemedWindow.CloseCommand}"
+                                        Foreground="#E57">
 
                                         <buttons:RoundButton.Icon>
 
