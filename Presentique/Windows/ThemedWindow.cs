@@ -62,6 +62,28 @@ public class ThemedWindow : Window
     }
 
     /// <summary>
+    /// Identifies the <see cref="TitleBarContent"/> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty TitleBarContentProperty
+        = DependencyProperty.Register(
+            nameof(TitleBarContent),
+            typeof(object),
+            typeof(ThemedWindow));
+
+    /// <summary>
+    /// Gets or sets the content displayed in the window's title bar.
+    /// </summary>
+    /// <value>
+    /// The content of the title bar, or <see langword="null"/>
+    /// if no content is specified.
+    /// </value>
+    public object? TitleBarContent
+    {
+        get => GetValue(TitleBarContentProperty);
+        set => SetValue(TitleBarContentProperty, value);
+    }
+
+    /// <summary>
     /// Represents the command used to minimize the window.
     /// </summary>
     public static readonly RoutedUICommand MinimizeCommand

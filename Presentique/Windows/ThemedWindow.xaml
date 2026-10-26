@@ -99,7 +99,23 @@
                             <Grid
                                 Height="{TemplateBinding TitleBarHeight}">
 
+                                <Grid.ColumnDefinitions>
+
+                                    <ColumnDefinition
+                                        Width="Auto"/>
+
+                                    <ColumnDefinition
+                                        Width="Auto"/>
+
+                                    <ColumnDefinition/>
+
+                                    <ColumnDefinition
+                                        Width="Auto"/>
+
+                                </Grid.ColumnDefinitions>
+                                
                                 <TextBlock
+                                    Grid.Column="1"
                                     Text="{TemplateBinding Title}"
                                     Foreground="{TemplateBinding Foreground}"
                                     FontSize="{TemplateBinding FontSize}"
@@ -109,7 +125,12 @@
                                     HorizontalAlignment="Left"
                                     Margin="16, 0, 0, 0"/>
 
+                                <ContentPresenter
+                                    Grid.Column="2"
+                                    Content="{TemplateBinding TitleBarContent}"/>
+
                                 <StackPanel
+                                    Grid.Column="3"
                                     Orientation="Horizontal"
                                     HorizontalAlignment="Right"
                                     Margin="5">
