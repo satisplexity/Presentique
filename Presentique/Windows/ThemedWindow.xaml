@@ -3,7 +3,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:windows="clr-namespace:Presentique.Windows"
     xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
-    xmlns:helpers="clr-namespace:Presentique.Helpers">
+    xmlns:helpers="clr-namespace:Presentique.Helpers"
+    xmlns:buttons="clr-namespace:Presentique.Buttons">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary
+            Source="/Presentique;component/Buttons/Styles/RoundButton.xaml"/>
+
+    </ResourceDictionary.MergedDictionaries>
 
     <Style
         TargetType="{x:Type windows:ThemedWindow}">
@@ -100,9 +108,7 @@
 
                             <!-- Title bar -->
                             <Grid
-                                Height="{TemplateBinding TitleBarHeight}"
-                                Background="#242426"
-                                Margin="0, 0, 0, 5">
+                                Height="{TemplateBinding TitleBarHeight}">
 
                                 <TextBlock
                                     Text="{TemplateBinding Title}"
@@ -114,8 +120,16 @@
                                     HorizontalAlignment="Left"
                                     Margin="10, 0, 0, 0"/>
 
-                                <StackPanel>
-                                    
+                                <StackPanel
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+
+                                    <buttons:RoundButton/>
+
+                                    <buttons:RoundButton/>
+
+                                    <buttons:RoundButton/>
+
                                 </StackPanel>
                                 
                             </Grid>

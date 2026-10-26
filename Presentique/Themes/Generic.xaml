@@ -5,6 +5,9 @@
     <ResourceDictionary.MergedDictionaries>
 
         <ResourceDictionary
+            Source="/Presentique;component/Buttons/Styles/RoundButton.xaml"/>
+
+        <ResourceDictionary
             Source="/Presentique;component/Windows/ThemedWindow.xaml"/>
 
     </ResourceDictionary.MergedDictionaries>

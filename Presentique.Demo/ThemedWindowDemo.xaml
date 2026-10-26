@@ -5,13 +5,15 @@
     xmlns:ui="clr-namespace:Presentique.Windows;assembly=Presentique"
     Title="My Application"
     Width="1000"
-    Height="650">
+    Height="650"
+    xmlns:buttons="clr-namespace:Presentique.Buttons;assembly=Presentique">
 
     <Grid>
         <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Text="Hello World!"/>
+        <buttons:RoundButton/>
     </Grid>
 
 </ui:ThemedWindow>
