@@ -69,11 +69,7 @@
 
         <Setter
             Property="BorderThickness"
-            Value="2"/>
-
-        <Setter
-            Property="CornerRounding"
-            Value="8"/>
+            Value="1.5"/>
 
         <Setter
             Property="AllowsTransparency"
@@ -118,17 +114,24 @@
                                     FontWeight="{TemplateBinding FontWeight}"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Left"
-                                    Margin="10, 0, 0, 0"/>
+                                    Margin="16, 0, 0, 0"/>
 
                                 <StackPanel
                                     Orientation="Horizontal"
-                                    HorizontalAlignment="Right">
+                                    HorizontalAlignment="Right"
+                                    Margin="5">
 
-                                    <buttons:RoundButton/>
+                                    <buttons:RoundButton
+                                        WindowChrome.IsHitTestVisibleInChrome="True"
+                                        Command="{x:Static windows:ThemedWindow.MinimizeCommand}"/>
 
-                                    <buttons:RoundButton/>
+                                    <buttons:RoundButton
+                                        WindowChrome.IsHitTestVisibleInChrome="True"
+                                        Command="{x:Static windows:ThemedWindow.ToggleMaximizeCommand}"/>
 
-                                    <buttons:RoundButton/>
+                                    <buttons:RoundButton
+                                        WindowChrome.IsHitTestVisibleInChrome="True"
+                                        Command="{x:Static windows:ThemedWindow.CloseCommand}"/>
 
                                 </StackPanel>
                                 

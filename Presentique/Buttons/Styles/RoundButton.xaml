@@ -7,25 +7,43 @@
         TargetType="{x:Type buttons:RoundButton}">
 
         <Setter
-            Property="Height"
-            Value="40"/>
-
-        <Setter
             Property="Width"
-            Value="40"/>
+            Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"/>
 
         <Setter
             Property="Background"
-            Value="#222"/>
+            Value="#1E1E1E"/>
 
         <Setter
             Property="Foreground"
             Value="Aqua"/>
 
+        <Setter 
+            Property="Margin"
+            Value="5"/>
 
         <Setter
-            Property="BorderBrush"
-            Value="#333"/>
+            Property="BorderBrush">
+
+            <Setter.Value>
+
+                <LinearGradientBrush
+                    StartPoint="0.5, 0"
+                    EndPoint="0.5, 1">
+
+                    <GradientStop
+                        Color="#333"
+                        Offset="0"/>
+
+                    <GradientStop
+                        Color="#222"
+                        Offset="1"/>
+
+                </LinearGradientBrush>
+                
+            </Setter.Value>
+            
+        </Setter>
 
         <Setter
             Property="BorderThickness"
@@ -40,8 +58,6 @@
                     TargetType="{x:Type buttons:RoundButton}">
 
                     <Border
-                        Width="{TemplateBinding Height}"
-                        Height="{TemplateBinding Height}"
                         CornerRadius="1000"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         Background="{TemplateBinding Background}"
@@ -79,8 +95,14 @@
                                     <Storyboard>
 
                                         <DoubleAnimation
-                                            Storyboard.TargetProperty="PART_HighlightingIcon"
+                                            Storyboard.TargetName="PART_HighlightingIcon"
+                                            Storyboard.TargetProperty="Opacity"
                                             To="1"
+                                            Duration="0:0:0.2"/>
+
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="#262627"
                                             Duration="0:0:0.2"/>
 
                                     </Storyboard>
@@ -96,8 +118,14 @@
                                     <Storyboard>
 
                                         <DoubleAnimation
-                                            Storyboard.TargetProperty="PART_HighlightingIcon"
+                                            Storyboard.TargetName="PART_HighlightingIcon"
+                                            Storyboard.TargetProperty="Opacity"
                                             To="0"
+                                            Duration="0:0:0.1"/>
+
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="#1E1E1E"
                                             Duration="0:0:0.1"/>
 
                                     </Storyboard>

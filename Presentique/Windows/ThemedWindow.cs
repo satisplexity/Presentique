@@ -19,7 +19,7 @@ public class ThemedWindow : Window
             nameof(CornerRounding),
             typeof(CornerRadius),
             typeof(ThemedWindow),
-            new PropertyMetadata(new CornerRadius(16)));
+            new PropertyMetadata(new CornerRadius(20)));
 
     /// <summary>
     /// Gets or sets the corner radius of the window.

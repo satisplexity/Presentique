@@ -6,11 +6,19 @@ namespace Presentique.Buttons;
 
 public class RoundButton : Button
 {
+    static RoundButton()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(
+            typeof(RoundButton),
+            new FrameworkPropertyMetadata(typeof(RoundButton)));
+    }
+
     public static readonly DependencyProperty IconProperty
         = DependencyProperty.Register(
             nameof(Icon),
             typeof(Geometry),
-            typeof(RoundButton));
+            typeof(RoundButton),
+            new PropertyMetadata(Geometry.Empty));
 
     public Geometry Icon
     {
