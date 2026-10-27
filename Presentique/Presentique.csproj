@@ -18,7 +18,7 @@
 
     <!-- NuGet metadata -->
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>mvvm;viewmodel;binding;dotnet</PackageTags>
+    <PackageTags>ui;wpf;controls;dotnet</PackageTags>
 
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  
