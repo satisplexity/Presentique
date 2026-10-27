@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="Presentique/Assets/PresentiqueIcon.png" alt="Presentique logo" width="128" />
+</div>
+
 # Presentique
 
 **Presentique** is a WPF UI control library for building customizable Windows desktop applications with C# and .NET 10.
