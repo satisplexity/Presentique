@@ -3,8 +3,29 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:navigation="clr-namespace:Presentique.Navigation">
 
+
+    <BackEase x:Key="Back"
+              EasingMode="EaseOut"
+              Amplitude="1.5"/>
+
+    <CubicEase x:Key="ScaleEase" EasingMode="EaseIn"/>
+
     <Style
         TargetType="{x:Type navigation:MenuNavigationButton}">
+
+        <Setter Property="RenderTransformOrigin"
+                Value="0.5, 0.5"/>
+
+        <Setter Property="RenderTransform">
+
+            <Setter.Value>
+
+                <ScaleTransform ScaleX="1"
+                                ScaleY="1"/>
+
+            </Setter.Value>
+
+        </Setter>
 
         <Setter
             Property="Background"
@@ -46,6 +67,10 @@
             Value="#AAB"/>
 
         <Setter
+            Property="CornerRounding"
+            Value="16"/>
+
+        <Setter
             Property="Template">
 
             <Setter.Value>
@@ -56,25 +81,80 @@
                     <Border
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRounding}">
 
-                        <StackPanel>
+                        <Grid>
 
-                            <Path
-                                Fill="{TemplateBinding Foreground}"/>
+                            <StackPanel
+                                Orientation="Horizontal">
 
-                            <TextBlock
-                                Text="{TemplateBinding Text}"
-                                Foreground="{TemplateBinding Foreground}"/>
+                                <Path
+                                    Data="{TemplateBinding Icon}"
+                                    Fill="{TemplateBinding Foreground}"
+                                    Stretch="Uniform"
+                                    Margin="{TemplateBinding Padding}"/>
 
-                        </StackPanel>
+                                <TextBlock
+                                    Text="{TemplateBinding Text}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontWeight="{TemplateBinding FontWeight}"
+                                    FontFamily="{TemplateBinding FontFamily}"/>
+
+                            </StackPanel>
+
+                            <Grid x:Name="Glow"
+                                  Opacity="0">
+
+                                <Grid>
+
+                                    <Grid.Effect>
+
+                                        <BlurEffect Radius="20"/>
+
+                                    </Grid.Effect>
+
+                                    <StackPanel>
+
+                                        <Path
+                                            Data="{TemplateBinding Icon}"
+                                            Fill="{TemplateBinding GlowBrush}"
+                                            Margin="{TemplateBinding Padding}"
+                                            Stretch="Uniform"/>
+
+                                        <TextBlock
+                                            Text="{TemplateBinding Text}"
+                                            Foreground="{TemplateBinding GlowBrush}"
+                                            Margin="{TemplateBinding Padding}"
+                                            FontFamily="{TemplateBinding FontFamily}"
+                                            FontSize="{TemplateBinding FontSize}"
+                                            FontWeight="{TemplateBinding FontWeight}"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+
+                                    </StackPanel>
+
+                                    <Ellipse
+                                        Fill="{TemplateBinding GlowBrush}"
+                                        Height="15"
+                                        VerticalAlignment="Bottom"
+                                        Margin="5, 0, 5, -10"/>
+
+                                </Grid>
+
+                            </Grid>
+
+                        </Grid>
                         
                     </Border>
 
                     <ControlTemplate.Triggers>
 
-                        <Trigger
-                            Property="IsMouseOver">
+                        <Trigger Property="IsChecked"
+                                 Value="True">
 
                             <Trigger.EnterActions>
 
@@ -82,15 +162,15 @@
 
                                     <Storyboard>
 
-                                        <DoubleAnimation
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="1"
-                                            Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="Glow"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.5"
+                                                         Duration="0:0:0.2"/>
 
                                     </Storyboard>
-                                    
+
                                 </BeginStoryboard>
-                                
+
                             </Trigger.EnterActions>
 
                             <Trigger.ExitActions>
@@ -99,22 +179,21 @@
 
                                     <Storyboard>
 
-                                        <DoubleAnimation
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0.9"
-                                            Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="Glow"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0"
+                                                         Duration="0:0:0.1"/>
 
                                     </Storyboard>
-                                    
+
                                 </BeginStoryboard>
-                                
+
                             </Trigger.ExitActions>
-                            
+
                         </Trigger>
 
-                        <Trigger
-                            Property="IsChecked"
-                            Value="True">
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
 
                             <Trigger.EnterActions>
 
@@ -122,20 +201,61 @@
 
                                     <Storyboard>
 
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="PART_Panel"
-                                            To="1"/>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Padding"
+                                                            To="14"
+                                                            Duration="0:0:0.3"
+                                                            EasingFunction="{StaticResource Back}"/>
 
                                     </Storyboard>
-                                    
+
                                 </BeginStoryboard>
-                                
+
                             </Trigger.EnterActions>
-                            
+
+                            <Trigger.ExitActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ThicknessAnimation Storyboard.TargetProperty="Padding"
+                                                            To="16"
+                                                            Duration="0:0:0.1"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </Trigger.ExitActions>
+
                         </Trigger>
-                        
+
+                        <EventTrigger RoutedEvent="Click">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <DoubleAnimation Storyboard.TargetProperty="(RadioButton.RenderTransform).(ScaleTransform.ScaleX)"
+                                                     To="0.85"
+                                                     Duration="0:0:0.15"
+                                                     AutoReverse="True"
+                                                     EasingFunction="{StaticResource ScaleEase}"/>
+
+                                    <DoubleAnimation Storyboard.TargetProperty="(RadioButton.RenderTransform).(ScaleTransform.ScaleY)"
+                                                     To="0.85"
+                                                     Duration="0:0:0.15"
+                                                     AutoReverse="True"
+                                                     EasingFunction="{StaticResource ScaleEase}"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
                     </ControlTemplate.Triggers>
-                    
+
                 </ControlTemplate>
                 
             </Setter.Value>
