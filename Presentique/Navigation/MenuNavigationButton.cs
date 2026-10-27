@@ -6,6 +6,13 @@ namespace Presentique.Navigation;
 
 public class MenuNavigationButton : RadioButton
 {
+    static MenuNavigationButton()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(
+            typeof(MenuNavigationButton),
+            new FrameworkPropertyMetadata(typeof(MenuNavigationButton)));
+    }
+
     public static readonly DependencyProperty IconProperty
         = DependencyProperty.Register(
             nameof(Icon),

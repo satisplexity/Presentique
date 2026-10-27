@@ -10,6 +10,9 @@
         <ResourceDictionary
             Source="/Presentique;component/Windows/ThemedWindow.xaml"/>
 
+        <ResourceDictionary
+            Source="/Presentique;component/Navigation/Styles/MenuNavigationButton.xaml"/>
+
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>
