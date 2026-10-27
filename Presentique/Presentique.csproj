@@ -31,13 +31,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Assets\PresentiqueIcon.png"
-          Pack="true"
-          PackagePath="icon.png" />
+    <None Include="Assets\PresentiqueIcon.png" Pack="true" PackagePath="icon.png" />
 
-    <None Include="..\docs\README.md"
-          Pack="true"
-          PackagePath="\" />
+    <None Include="..\docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
