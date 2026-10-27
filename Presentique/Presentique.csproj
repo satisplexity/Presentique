@@ -35,7 +35,7 @@
           Pack="true"
           PackagePath="icon.png" />
 
-    <None Include="..\README.md"
+    <None Include="..\docs\README.md"
           Pack="true"
           PackagePath="\" />
   </ItemGroup>
