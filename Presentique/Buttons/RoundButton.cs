@@ -4,8 +4,15 @@ using System.Windows;
 
 namespace Presentique.Buttons;
 
+/// <summary>
+/// Represents a button with a circular appearance and a customizable vector icon.
+/// </summary>
 public class RoundButton : Button
 {
+    /// <summary>
+    /// Initializes the default style metadata for the
+    /// <see cref="RoundButton"/> control.
+    /// </summary>
     static RoundButton()
     {
         DefaultStyleKeyProperty.OverrideMetadata(
@@ -13,6 +20,9 @@ public class RoundButton : Button
             new FrameworkPropertyMetadata(typeof(RoundButton)));
     }
 
+    /// <summary>
+    /// Identifies the <see cref="Icon"/> dependency property.
+    /// </summary>
     public static readonly DependencyProperty IconProperty
         = DependencyProperty.Register(
             nameof(Icon),
@@ -20,6 +30,13 @@ public class RoundButton : Button
             typeof(RoundButton),
             new PropertyMetadata(Geometry.Empty));
 
+    /// <summary>
+    /// Gets or sets the geometry used to render the button's icon.
+    /// </summary>
+    /// <value>
+    /// A <see cref="Geometry"/> representing the icon.
+    /// The default value is <see cref="Geometry.Empty"/>.
+    /// </value>
     public Geometry Icon
     {
         get => (Geometry)GetValue(IconProperty);
