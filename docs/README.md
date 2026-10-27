@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Presentique/Assets/PresentiqueIcon.png" alt="Presentique logo" width="128" />
+  <img src="../Presentique/Assets/PresentiqueIcon.png" alt="Presentique logo" width="128" />
 </div>
 
 # Presentique
