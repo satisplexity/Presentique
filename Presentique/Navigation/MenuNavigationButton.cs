@@ -41,4 +41,28 @@ public class MenuNavigationButton : RadioButton
         get => (bool)GetValue(IsTextCollapsedProperty);
         set => SetValue(IsTextCollapsedProperty, value);
     }
+
+    public static readonly DependencyProperty CornerRoundingProperty
+        = DependencyProperty.Register(
+            nameof(CornerRounding),
+            typeof(CornerRadius),
+            typeof(MenuNavigationButton));
+
+    public CornerRadius CornerRounding
+    {
+        get => (CornerRadius)GetValue(CornerRoundingProperty);
+        set => SetValue(CornerRoundingProperty, value);
+    }
+
+    public static readonly DependencyProperty GlowBrushProperty
+        = DependencyProperty.Register(
+            nameof(GlowBrush),
+            typeof(SolidColorBrush),
+            typeof(MenuNavigationButton));
+
+    public SolidColorBrush GlowBrush
+    {
+        get => (SolidColorBrush)GetValue(GlowBrushProperty);
+        set => SetValue(GlowBrushProperty, value);
+    }
 }
