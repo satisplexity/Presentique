@@ -6,8 +6,7 @@
     Title="My Application"
     Width="1000"
     Height="650"
-    xmlns:buttons="clr-namespace:Presentique.Buttons;assembly=Presentique"
-    xmlns:navigationButtons="clr-namespace:Presentique.Navigation;assembly=Presentique">
+    xmlns:controls="clr-namespace:Presentique.Controls;assembly=Presentique">
 
     <Grid>
 
@@ -21,12 +20,12 @@
 
         <StackPanel>
 
-            <navigationButtons:MenuNavigationButton/>
+            <controls:MenuNavigationButton/>
 
-            <navigationButtons:MenuNavigationButton/>
-            <navigationButtons:MenuNavigationButton/>
+            <controls:MenuNavigationButton/>
+            <controls:MenuNavigationButton/>
 
-            <navigationButtons:MenuNavigationButton/>
+            <controls:MenuNavigationButton/>
 
 
         </StackPanel>

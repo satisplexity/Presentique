@@ -4,7 +4,7 @@
     xmlns:windows="clr-namespace:Presentique.Windows"
     xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
     xmlns:helpers="clr-namespace:Presentique.Helpers"
-    xmlns:buttons="clr-namespace:Presentique.Buttons">
+    xmlns:controls="clr-namespace:Presentique.Controls">
 
     <Style
         TargetType="{x:Type windows:ThemedWindow}">
@@ -140,44 +140,44 @@
                                     HorizontalAlignment="Right"
                                     Margin="5">
 
-                                    <buttons:RoundButton
+                                    <controls:RoundButton
                                         WindowChrome.IsHitTestVisibleInChrome="True"
                                         Command="{x:Static windows:ThemedWindow.MinimizeCommand}"
                                         Foreground="#777">
 
-                                        <buttons:RoundButton.Icon>
+                                        <controls:RoundButton.Icon>
 
                                             M340.78-341.35h-107q-22.08 0-37.54-15.45-15.46-15.46-15.46-37.55 0-22.08 15.46-37.54t37.54-15.46h160q22.09 0 37.55 15.46 15.45 15.46 15.45 37.54v160q0 22.09-15.45 37.55-15.46 15.45-37.55 15.45-22.08 0-37.54-15.45-15.46-15.46-15.46-37.55v-107Zm278.44-277.87h107q22.08 0 37.54 15.46t15.46 37.54q0 22.09-15.46 37.55-15.46 15.45-37.54 15.45h-160q-22.09 0-37.55-15.45-15.45-15.46-15.45-37.55v-160q0-22.08 15.45-37.54 15.46-15.46 37.55-15.46 22.08 0 37.54 15.46t15.46 37.54v107Z
 
-                                        </buttons:RoundButton.Icon>
+                                        </controls:RoundButton.Icon>
                                         
-                                    </buttons:RoundButton>
+                                    </controls:RoundButton>
 
-                                    <buttons:RoundButton
+                                    <controls:RoundButton
                                         WindowChrome.IsHitTestVisibleInChrome="True"
                                         Command="{x:Static windows:ThemedWindow.ToggleMaximizeCommand}"
                                         Foreground="#777">
 
-                                        <buttons:RoundButton.Icon>
+                                        <controls:RoundButton.Icon>
 
                                             M206.78-100.78q-44.3 0-75.15-30.85-30.85-30.85-30.85-75.15V-307q0-22.09 15.46-37.54Q131.7-360 153.78-360q22.09 0 37.55 15.46 15.45 15.45 15.45 37.54v100.22H307q22.09 0 37.54 15.45Q360-175.87 360-153.78q0 22.08-15.46 37.54-15.45 15.46-37.54 15.46H206.78Zm546.44 0H653q-22.09 0-37.54-15.46Q600-131.7 600-153.78q0-22.09 15.46-37.55 15.45-15.45 37.54-15.45h100.22V-307q0-22.09 15.45-37.54Q784.13-360 806.22-360q22.08 0 37.54 15.46 15.46 15.45 15.46 37.54v100.22q0 44.3-30.85 75.15-30.85 30.85-75.15 30.85ZM100.78-653v-100.22q0-44.3 30.85-75.15 30.85-30.85 75.15-30.85H307q22.09 0 37.54 15.46Q360-828.3 360-806.22q0 22.09-15.46 37.55-15.45 15.45-37.54 15.45H206.78V-653q0 22.09-15.45 37.54Q175.87-600 153.78-600q-22.08 0-37.54-15.46-15.46-15.45-15.46-37.54Zm652.44 0v-100.22H653q-22.09 0-37.54-15.45Q600-784.13 600-806.22q0-22.08 15.46-37.54 15.45-15.46 37.54-15.46h100.22q44.3 0 75.15 30.85 30.85 30.85 30.85 75.15V-653q0 22.09-15.46 37.54Q828.3-600 806.22-600q-22.09 0-37.55-15.46-15.45-15.45-15.45-37.54Z
 
-                                        </buttons:RoundButton.Icon>
+                                        </controls:RoundButton.Icon>
                                         
-                                    </buttons:RoundButton>
+                                    </controls:RoundButton>
 
-                                    <buttons:RoundButton
+                                    <controls:RoundButton
                                         WindowChrome.IsHitTestVisibleInChrome="True"
                                         Command="{x:Static windows:ThemedWindow.CloseCommand}"
                                         Foreground="#E57">
 
-                                        <buttons:RoundButton.Icon>
+                                        <controls:RoundButton.Icon>
 
                                             M480-46q-91 0-170-34t-137.5-92.5Q114-231 80-310T46-480q0-71 20.5-134.5T125-732q17-24 41.5-25t43.5 13q19 14 26 38.5T224-653q-25 37-38.5 80.5T172-480q0 130 89 219t219 89q130 0 219-89t89-219q0-49-13.5-92.5T736-653q-19-28-12.5-52t26.5-38q20-14 44.5-13t41.5 25q37 54 57.5 117T914-480q0 91-34 170t-92.5 137.5Q729-114 650-80T480-46Zm-44.5-389.5Q417-454 417-480v-371q0-26 18.5-44.5T480-914q26 0 44.5 18.5T543-851v371q0 26-18.5 44.5T480-417q-26 0-44.5-18.5Z
 
-                                        </buttons:RoundButton.Icon>
+                                        </controls:RoundButton.Icon>
                                         
-                                    </buttons:RoundButton>
+                                    </controls:RoundButton>
 
                                 </StackPanel>
                                 
