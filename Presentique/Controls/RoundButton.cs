@@ -2,7 +2,7 @@
 using System.Windows.Media;
 using System.Windows;
 
-namespace Presentique.Buttons;
+namespace Presentique.Controls;
 
 /// <summary>
 /// Represents a button with a circular appearance and a customizable vector icon.

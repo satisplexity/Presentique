@@ -2,7 +2,7 @@
 using System.Windows.Media;
 using System.Windows;
 
-namespace Presentique.Navigation;
+namespace Presentique.Controls;
 
 public class MenuNavigationButton : RadioButton
 {
