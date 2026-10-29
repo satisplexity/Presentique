@@ -25,30 +25,6 @@ public class MenuNavigationButton : RadioButton
         set => SetValue(IconProperty, value);
     }
 
-    public static readonly DependencyProperty TextProperty
-        = DependencyProperty.Register(
-            nameof(Text),
-            typeof(string),
-            typeof(MenuNavigationButton));
-
-    public string Text
-    {
-        get => (string)GetValue(TextProperty);
-        set => SetValue(TextProperty, value);
-    }
-
-    public static readonly DependencyProperty IsTextCollapsedProperty
-        = DependencyProperty.Register(
-            nameof(IsTextCollapsed),
-            typeof(bool),
-            typeof(MenuNavigationButton));
-
-    public bool IsTextCollapsed
-    {
-        get => (bool)GetValue(IsTextCollapsedProperty);
-        set => SetValue(IsTextCollapsedProperty, value);
-    }
-
     public static readonly DependencyProperty CornerRoundingProperty
         = DependencyProperty.Register(
             nameof(CornerRounding),

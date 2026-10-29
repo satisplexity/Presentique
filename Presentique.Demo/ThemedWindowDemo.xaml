@@ -6,13 +6,31 @@
     Title="My Application"
     Width="1000"
     Height="650"
-    xmlns:buttons="clr-namespace:Presentique.Buttons;assembly=Presentique">
+    xmlns:buttons="clr-namespace:Presentique.Buttons;assembly=Presentique"
+    xmlns:navigationButtons="clr-namespace:Presentique.Navigation;assembly=Presentique">
 
     <Grid>
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Text="Hello World!"/>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+
+            <navigationButtons:MenuNavigationButton/>
+
+            <navigationButtons:MenuNavigationButton/>
+            <navigationButtons:MenuNavigationButton/>
+
+            <navigationButtons:MenuNavigationButton/>
+
+
+        </StackPanel>
+        
     </Grid>
 
 </ui:ThemedWindow>
