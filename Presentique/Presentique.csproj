@@ -8,7 +8,7 @@
 
     <!-- Package metadata -->
     <PackageId>Presentique</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>satisplexity</Authors>
     <Description>UI framework for WPF applications.</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
 	<RepositoryUrl>https://github.com/satisplexity/Presentique</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageReleaseNotes>
-		  Initial release of Presentique UI framework.
+		  Add new control: menu navigation button
 	</PackageReleaseNotes>
   </PropertyGroup>
 
