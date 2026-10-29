@@ -18,11 +18,11 @@
 
         <Setter
             Property="Width"
-            Value="70"/>
+            Value="60"/>
 
         <Setter
             Property="Height"
-            Value="70"/>
+            Value="60"/>
 
         <Setter
             Property="RenderTransformOrigin"
@@ -34,7 +34,7 @@
 
         <Setter
             Property="Padding"
-            Value="17"/>
+            Value="15"/>
 
         <Setter
             Property="RenderTransform">
@@ -197,7 +197,7 @@
 
                                         <ThicknessAnimation
                                             Storyboard.TargetProperty="Padding"
-                                            To="15"
+                                            To="13"
                                             Duration="0:0:0.3"
                                             EasingFunction="{StaticResource ScaleEase}"/>
 
@@ -215,7 +215,7 @@
 
                                         <ThicknessAnimation
                                             Storyboard.TargetProperty="Padding"
-                                            To="17"
+                                            To="15"
                                             Duration="0:0:0.2"
                                             EasingFunction="{StaticResource HoverEase}"/>
 
