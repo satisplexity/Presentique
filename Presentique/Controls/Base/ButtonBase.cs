@@ -26,4 +26,22 @@ public abstract class ButtonBase : Button
         get => (Geometry)GetValue(IconProperty);
         set => SetValue(IconProperty, value);
     }
+
+    /// <summary>
+    /// Identifies the <see cref="CornerRadius"/> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty CornerRadiusProperty
+        = DependencyProperty.Register(
+            nameof(CornerRadius),
+            typeof(CornerRadius),
+            typeof(ButtonBase));
+
+    /// <summary>
+    /// Gets or sets the radius of the button's corners.
+    /// </summary>
+    public CornerRadius CornerRadius
+    {
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
+    }
 }
