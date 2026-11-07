@@ -6,10 +6,10 @@ namespace Presentique.Avalonia.Controls;
 
 public class ActionButton : Button
 {
-    public static readonly StyledProperty<Geometry> IconProperty =
-        AvaloniaProperty.Register<ActionButton, Geometry>(nameof(Icon));
+    public static readonly StyledProperty<StreamGeometry> IconProperty =
+        AvaloniaProperty.Register<ActionButton, StreamGeometry>(nameof(Icon));
 
-    public Geometry Icon
+    public StreamGeometry Icon
     {
         get => GetValue(IconProperty);
         set => SetValue(IconProperty, value);

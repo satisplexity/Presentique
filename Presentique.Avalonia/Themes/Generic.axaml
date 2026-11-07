@@ -72,10 +72,9 @@
 
                     <Grid>
                        
-                        <Path
+                        <PathIcon
                             Data="{TemplateBinding Icon}"
-                            Fill="{TemplateBinding Foreground}"
-                            Stretch="Uniform"
+                            Foreground="{TemplateBinding Foreground}"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
 
