@@ -2,6 +2,7 @@
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
+  <Project Path="Presentique.Avalonia/Presentique.Avalonia.csproj" Id="d110feab-fdf2-4568-a3cd-bb2807caa4a8" />
   <Project Path="Presentique.Demo/Presentique.Demo.csproj" />
   <Project Path="Presentique/Presentique.csproj" />
 </Solution>
