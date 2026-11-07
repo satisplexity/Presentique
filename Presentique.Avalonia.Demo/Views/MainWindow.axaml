@@ -7,7 +7,8 @@
         x:Class="Presentique.Avalonia.Demo.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Presentique.Avalonia.Demo">
+        Title="Presentique.Avalonia.Demo"
+        xmlns:controls="using:Presentique.Avalonia.Controls">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,8 +16,12 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <Grid>
+        
+        <controls:ActionButton Content="Click Me!"
+                               Width="200"
+                               Height="40"/>
+
+    </Grid>
 
 </Window>
