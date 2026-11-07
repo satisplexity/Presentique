@@ -70,11 +70,16 @@
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding CornerRadius}">
 
-                    <ContentPresenter
-                        Content="{TemplateBinding Content}"
-                        ContentTemplate="{TemplateBinding ContentTemplate}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"/>
+                    <Grid>
+                       
+                        <Path
+                            Data="{TemplateBinding Icon}"
+                            Fill="{TemplateBinding Foreground}"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                    </Grid>
 
                 </Border>
 
