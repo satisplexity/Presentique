@@ -1,0 +1,46 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Presentique.Avalonia.Controls">
+
+    <ControlTheme
+        x:Key="{x:Type controls:ActionButton}"
+        TargetType="controls:ActionButton">
+
+        <Setter Property="Background" Value="#DDD4EE"/>
+        <Setter Property="Foreground" Value="#24212B"/>
+        <Setter Property="Padding" Value="16,10"/>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="12"
+                    Padding="{TemplateBinding Padding}">
+
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+
+                </Border>
+
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pointerover">
+            <Setter Property="Background" Value="#C7BADE"/>
+        </Style>
+
+        <Style Selector="^:pressed">
+            <Setter Property="Background" Value="#AA98C9"/>
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>
