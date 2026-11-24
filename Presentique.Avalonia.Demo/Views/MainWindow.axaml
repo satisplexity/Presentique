@@ -1,28 +1,181 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
+<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Presentique.Avalonia.Demo.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:controls="using:Presentique.Avalonia.Controls"
         x:Class="Presentique.Avalonia.Demo.Views.MainWindow"
         x:DataType="vm:MainViewModel"
-        Background="#191919"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="Presentique.Avalonia.Demo"
-        xmlns:controls="using:Presentique.Avalonia.Controls">
-
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
-    </Design.DataContext>
-
-    <Grid>
+        Background="#191919" Icon="/Assets/avalonia-logo.ico"
+        Title="Presentique.Avalonia.Demo">
+    <Design.DataContext><vm:MainViewModel /></Design.DataContext>
+    <StackPanel Margin="24" Spacing="16">
+        <controls:ActionButton Content="+" HorizontalContentAlignment="Center" Width="40" Height="40"/>
         
-        <controls:ActionButton Content="+"
-                               Width="40"
-                               Height="40"/>
+        <Grid Width="500"
+              Height="40">
+            
+            <controls:ReliefSurface
+                Background="#333"
+                Depth="2"
+                CornerRadius="40"
+                CornerSmoothing="1"
+                LightAngle="0"/>
 
-    </Grid>
+            <controls:ReliefSurface
+                Background="#222"
+                Depth="-3"
+                Margin="6"
+                CornerRadius="20"
+                LightAngle="0"
+                CornerSmoothing="1"/>
 
+            <TextBlock Text="Enter your opinion..."
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="15, 0, 0, 0"
+                       Foreground="#666"/>
+
+        </Grid>
+
+        <Grid Width="700"
+              Height="400">
+           
+             <controls:ReliefSurface
+                Background="#EEEEEF"
+                Depth="2"
+                CornerRadius="20"
+                CornerSmoothing="1"
+                LightAngle="0"/>
+
+            <Grid RowDefinitions="auto, *"
+                  Margin="5, 10, 5, 5">
+                
+                <TextBlock Text="Select item"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="#333"
+                       FontWeight="Bold"
+                       Margin="10, 0, 0,0"/>
+
+                <controls:ReliefSurface
+                Background="#EEEEEF"
+                Depth="-7"
+                Margin="6"
+                CornerRadius="10"
+                LightAngle="0"
+                CornerSmoothing="1"
+                Grid.Row="1"/>
+
+                <UniformGrid Columns="3"
+                             Grid.Row="1"
+                             Margin="20"
+                             ColumnSpacing="20"
+                             RowSpacing="20">
+                    
+                    <controls:ReliefSurface
+                Background="#88C"
+                Depth="-20"
+                CornerRadius="100"
+                LightAngle="0"
+                CornerSmoothing="4"/>
+
+                    <controls:ReliefSurface
+                Background="#C8C"
+                Depth="6"
+                CornerRadius="50"
+                LightAngle="45"
+                CornerSmoothing="4"/>
+
+                    <controls:ReliefSurface
+                Background="#C88"
+                Depth="7"
+
+                CornerRadius="50"
+                LightAngle="90"
+                CornerSmoothing="4"/>
+
+                    <controls:ReliefSurface
+                Background="#8CC"
+                Depth="8"
+                CornerRadius="50"
+                LightAngle="135"
+                CornerSmoothing="4"/>
+
+                    <controls:ReliefSurface
+                Background="#48C"
+                Depth="9"
+                CornerRadius="50"
+                LightAngle="180"
+                CornerSmoothing="4"/>
+
+                    <controls:ReliefSurface
+                Background="#84C"
+                Depth="10"
+                CornerRadius="50"
+                LightAngle="225"
+                CornerSmoothing="4"/>
+
+                </UniformGrid>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Width="500"
+              Height="60">
+           
+             <controls:ReliefSurface
+                Background="#272727"
+                Depth="3"
+                CornerRadius="40"
+                CornerSmoothing="1"
+                LightAngle="0"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Spacing="10">
+                
+               <controls:ActionButton Width="40"
+                                      Height="40"
+                                      Background="#C8C"/>
+                <controls:ActionButton Width="40"
+                                      Height="40"/>
+                <controls:ActionButton Width="40"
+                                      Height="40"/>
+                <controls:ActionButton Width="40"
+                                      Height="40"/>
+                <controls:ActionButton Width="40"
+                                      Height="40"/>
+                <controls:ActionButton Width="40"
+                                      Height="40"/>
+                <controls:ActionButton Width="40"
+                                      Height="40"/>
+
+            </StackPanel>
+
+        </Grid>
+
+        <controls:ReliefSurface CornerRadius="20"
+                                CornerSmoothing="2"
+                                Width="400"
+                                Height="200"
+                                LightAngle="45"
+                                Depth="4">
+           
+            <controls:ReliefSurface.Background>
+               
+                <RadialGradientBrush Center="0, 0">
+                   
+                    <GradientStop Color="#88C"
+                                  Offset="-0.5"/>
+
+                    <GradientStop Color="#333"
+                                  Offset="1"/>
+
+                </RadialGradientBrush>
+
+            </controls:ReliefSurface.Background>
+
+        </controls:ReliefSurface>
+
+    </StackPanel>
 </Window>

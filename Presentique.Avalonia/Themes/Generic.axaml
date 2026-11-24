@@ -8,11 +8,9 @@
         TargetType="controls:ActionButton">
 
          <!-- Generic -->
-        <Setter Property="Width" Value="50"/>
+        <Setter Property="Width" Value="300"/>
         <Setter Property="Height" Value="50"/>
-        <Setter Property="CornerRadius" Value="15"/>
-        <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="RenderTransform" Value="translateY(0px)"/>
+        <Setter Property="RenderTransform" Value="translateY(0px) scaleY(1)"/>
 
         <!-- Transitions -->
         <Setter Property="Transitions">
@@ -20,11 +18,6 @@
 
                 <BrushTransition
                     Property="Background"
-                    Duration="0:0:0.2"
-                    Easing="CubicEaseOut"/>
-
-                <BrushTransition
-                    Property="BorderBrush"
                     Duration="0:0:0.2"
                     Easing="CubicEaseOut"/>
 
@@ -38,49 +31,44 @@
                     Duration="0:0:0.15"
                     Easing="CubicEaseOut"/>
 
+                <DoubleTransition Property="Depth"
+                                  Duration="0:0:0.2"
+                                  Easing="SineEaseOut"/>
+
             </Transitions>
         </Setter>
 
         <!-- Default -->
-        <Setter Property="Background" Value="#242424"/>
+        <Setter Property="Background" Value="#333"/>
         <Setter Property="Foreground" Value="#CCCCEE"/>
 
-        <Setter Property="BorderBrush">
-            <Setter.Value>
-                <LinearGradientBrush
-                    StartPoint="50%,0%"
-                    EndPoint="50%,100%">
+        <Setter Property="Depth"
+                Value="5"/>
 
-                    <GradientStop Offset="0" Color="#353535"/>
-                    <GradientStop Offset="0.3" Color="#242424"/>
-                    <GradientStop Offset="0.7" Color="#242424"/>
-                    <GradientStop Offset="1" Color="#131313"/>
+        <Setter Property="CornerSmoothing"
+                Value="1.5"/>
 
-                </LinearGradientBrush>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="CornerRadius"
+                Value="20"/>
 
         <!-- Template -->
         <Setter Property="Template">
             <ControlTemplate>
 
-                <Border
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{TemplateBinding CornerRadius}">
+                <Grid Background="Transparent">
+                   
+                    <controls:ReliefSurface Depth="{TemplateBinding Depth}"
+                                            Background="{TemplateBinding Background}"
+                                            CornerRadius="{TemplateBinding CornerRadius}"
+                                            CornerSmoothing="{TemplateBinding CornerSmoothing}"
+                                            LightAngle="0"/>
 
-                    <Grid>
-                       
-                        <PathIcon
-                            Data="{TemplateBinding Icon}"
-                            Foreground="{TemplateBinding Foreground}"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      Margin="20"
+                                      IsHitTestVisible="False"
+                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
 
-                    </Grid>
-
-                </Border>
+                </Grid>
 
             </ControlTemplate>
         </Setter>
@@ -88,32 +76,19 @@
         <!-- Hover -->
         <Style Selector="^:pointerover">
 
-            <Setter Property="Background" Value="#242424"/>
-            <Setter Property="Foreground" Value="#8888EE"/>
-
+            <Setter Property="Background"
+                    Value="#2b2b2b"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
         </Style>
 
         <!-- Pressed -->
         <Style Selector="^:pressed">
-
-            <Setter Property="Background" Value="#212121"/>
-            <Setter Property="Foreground" Value="#8888EE"/>
-            <Setter Property="RenderTransform" Value="translateY(-2px)"/>
-
-            <Setter Property="BorderBrush">
-                <Setter.Value>
-                    <LinearGradientBrush
-                        StartPoint="50%,0%"
-                        EndPoint="50%,100%">
-
-                        <GradientStop Offset="0" Color="#131313"/>
-                        <GradientStop Offset="0.2" Color="#212121"/>
-                        <GradientStop Offset="0.8" Color="#212121"/>
-                        <GradientStop Offset="1" Color="#353535"/>
-
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Background"
+                    Value="#292929"/>
+            <Setter Property="Foreground" Value="#BBB"/>
+            <Setter Property="Depth"
+                    Value="-5"/>
+            <Setter Property="RenderTransform" Value="translateY(2px) scaleY(0.95)"/>
             </Style>
     </ControlTheme>
 
