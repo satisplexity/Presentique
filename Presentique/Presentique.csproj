@@ -36,4 +36,8 @@
     <None Include="..\docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controls\Buttons\" />
+  </ItemGroup>
+
 </Project>

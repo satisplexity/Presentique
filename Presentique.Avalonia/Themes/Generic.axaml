@@ -1,0 +1,95 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Presentique.Avalonia.Controls">
+
+    <ControlTheme
+        x:Key="{x:Type controls:ActionButton}"
+        TargetType="controls:ActionButton">
+
+         <!-- Generic -->
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="RenderTransform" Value="translateY(0px) scaleY(1)"/>
+
+        <!-- Transitions -->
+        <Setter Property="Transitions">
+            <Transitions>
+
+                <BrushTransition
+                    Property="Background"
+                    Duration="0:0:0.2"
+                    Easing="CubicEaseOut"/>
+
+                <BrushTransition
+                    Property="Foreground"
+                    Duration="0:0:0.2"
+                    Easing="CubicEaseOut"/>
+
+                <TransformOperationsTransition
+                    Property="RenderTransform"
+                    Duration="0:0:0.15"
+                    Easing="CubicEaseOut"/>
+
+                <DoubleTransition Property="Depth"
+                                  Duration="0:0:0.2"
+                                  Easing="SineEaseOut"/>
+
+            </Transitions>
+        </Setter>
+
+        <!-- Default -->
+        <Setter Property="Background" Value="#333"/>
+        <Setter Property="Foreground" Value="#CCCCEE"/>
+
+        <Setter Property="Depth"
+                Value="5"/>
+
+        <Setter Property="CornerSmoothing"
+                Value="1.5"/>
+
+        <Setter Property="CornerRadius"
+                Value="20"/>
+
+        <!-- Template -->
+        <Setter Property="Template">
+            <ControlTemplate>
+
+                <Grid Background="Transparent">
+                   
+                    <controls:ReliefSurface Depth="{TemplateBinding Depth}"
+                                            Background="{TemplateBinding Background}"
+                                            CornerRadius="{TemplateBinding CornerRadius}"
+                                            CornerSmoothing="{TemplateBinding CornerSmoothing}"
+                                            LightAngle="0"/>
+
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      Margin="20"
+                                      IsHitTestVisible="False"
+                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+
+                </Grid>
+
+            </ControlTemplate>
+        </Setter>
+
+        <!-- Hover -->
+        <Style Selector="^:pointerover">
+
+            <Setter Property="Background"
+                    Value="#2b2b2b"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+        </Style>
+
+        <!-- Pressed -->
+        <Style Selector="^:pressed">
+            <Setter Property="Background"
+                    Value="#292929"/>
+            <Setter Property="Foreground" Value="#BBB"/>
+            <Setter Property="Depth"
+                    Value="-3"/>
+            <Setter Property="RenderTransform" Value="translateY(2px) scaleY(0.95)"/>
+            </Style>
+    </ControlTheme>
+
+</ResourceDictionary>
