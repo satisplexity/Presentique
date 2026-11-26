@@ -8,5 +8,8 @@
   <ItemGroup>
     <ProjectReference Include="../../Presentique.Avalonia/Presentique.Avalonia.csproj" />
     <Compile Include="../../Presentique.Avalonia/Rendering/*.cs" Link="Rendering/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../Presentique.Avalonia/Rendering/Relief.sksl"
+                      Link="Rendering/Relief.sksl"
+                      LogicalName="Presentique.Avalonia.Rendering.Relief.sksl" />
   </ItemGroup>
 </Project>

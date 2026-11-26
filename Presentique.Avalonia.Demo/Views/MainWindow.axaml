@@ -163,7 +163,7 @@
            
             <controls:ReliefSurface.Background>
                
-                <RadialGradientBrush Center="0, 0">
+                <RadialGradientBrush GradientOrigin="0%, 0%">
                    
                     <GradientStop Color="#88C"
                                   Offset="-0.5"/>

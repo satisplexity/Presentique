@@ -87,7 +87,7 @@
                     Value="#292929"/>
             <Setter Property="Foreground" Value="#BBB"/>
             <Setter Property="Depth"
-                    Value="-5"/>
+                    Value="-3"/>
             <Setter Property="RenderTransform" Value="translateY(2px) scaleY(0.95)"/>
             </Style>
     </ControlTheme>
